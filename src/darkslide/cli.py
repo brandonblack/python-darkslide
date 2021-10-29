@@ -66,7 +66,7 @@ def parse_options():
     parser.add_option(
         "-M", "--mod",
         dest="theme_mod",
-        help="Specify a theme modifier by name. Available: wide16x9.",
+        help="Comma-separated list of theme modifiers by name. Available: wide16x9.",
         default='')
 
     parser.add_option(

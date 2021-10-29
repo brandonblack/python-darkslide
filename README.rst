@@ -217,7 +217,7 @@ Options:
   -m LEVEL, --max-toc-level=LEVEL
                         Limits the TOC level generation to a specific level.
   -M, --mod=MOD
-                        Specify a theme modifier by name. Available: wide16x9.
+                        Comma-separated list of theme modifiers by name. Available: wide16x9.
   -o, --direct-output   Prints the generated HTML code to stdout.
   -P, --no-presenter-notes
                         Don't include presenter notes in the output.

@@ -68,7 +68,7 @@ class Generator(object):
         self.presenter_notes = kwargs.get('presenter_notes', True)
         self.relative = kwargs.get('relative', False)
         self.theme = kwargs.get('theme', 'default')
-        self.theme_mod = kwargs.get('theme_mod', '')
+        self.theme_mods = list(filter(lambda x: x is not '', kwargs.get('theme_mod', '').split(',')))
         self.verbose = kwargs.get('verbose', False)
         self.linenos = self.linenos_check(kwargs.get('linenos'))
         self.watch = kwargs.get('watch', False)
@@ -128,12 +128,14 @@ class Generator(object):
             theme_dir,
             os.path.join(THEMES_DIR, 'default'),
         ]
-        if self.theme_mod:
-            theme_mod_dir = os.path.join(MODS_DIR, self.theme_mod)
+        self.mod_paths = []
+        for mod in self.theme_mods:
+            theme_mod_dir = os.path.join(MODS_DIR, mod)
             if not os.path.exists(theme_mod_dir):
-                raise RuntimeError("Theme mod %r doesn't exist" % self.theme_mod)
+                raise RuntimeError("Theme mod %r doesn't exist" % mod)
 
             self.theme_paths.append(theme_mod_dir)
+            self.mod_paths.append(theme_mod_dir)
 
         legacy_template = self.lookup_file('base.html', raise_error=False)
         if legacy_template:
@@ -292,8 +294,8 @@ class Generator(object):
             self.read_asset(self.lookup_file(os.path.join('css', 'screen.css'))),
             self.read_asset(self.lookup_file(os.path.join('css', 'theme.css'))),
         ]
-        if self.theme_mod:
-            css.append(self.read_asset(self.lookup_file(os.path.join('css', 'mod.css'))))
+        for mod_path in self.mod_paths:
+            css.append(self.read_asset(os.path.join(mod_path, 'css', 'mod.css')))
         css.extend(self.process_user_files(self.user_css))
         return css
 
