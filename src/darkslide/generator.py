@@ -68,7 +68,7 @@ class Generator(object):
         self.presenter_notes = kwargs.get('presenter_notes', True)
         self.relative = kwargs.get('relative', False)
         self.theme = kwargs.get('theme', 'default')
-        self.theme_mods = list(filter(lambda x: x is not '', kwargs.get('theme_mod', '').split(',')))
+        self.theme_mods = list(filter(lambda x: x != '', kwargs.get('theme_mod', '').split(',')))
         self.verbose = kwargs.get('verbose', False)
         self.linenos = self.linenos_check(kwargs.get('linenos'))
         self.watch = kwargs.get('watch', False)
