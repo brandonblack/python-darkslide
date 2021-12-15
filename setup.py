@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
-from __future__ import absolute_import
-from __future__ import print_function
 
 import io
 import re
@@ -32,17 +30,14 @@ setup(
         re.compile('^.. start-badges.*^.. end-badges', re.M | re.S).sub('', read('README.rst')),
         re.sub(':[a-z]+:`~?(.*?)`', r'``\1``', read('CHANGELOG.rst'))
     ),
-    author='Adam Zapletal',
-    author_email='adamzap@gmail.com',
-    maintainer='Ionel Cristian Mărieș',
-    maintainer_email='contact@ionelmc.ro',
+    author='Ionel Cristian Mărieș',
+    author_email='contact@ionelmc.ro',
     url='https://github.com/ionelmc/python-darkslide',
     packages=find_packages('src'),
     package_dir={'': 'src'},
     py_modules=[splitext(basename(path))[0] for path in glob('src/*.py')],
     include_package_data=True,
     zip_safe=False,
-    platforms=['any'],
     classifiers=[
         # complete classifier list: http://pypi.python.org/pypi?%3Aaction=list_classifiers
         'Development Status :: 5 - Production/Stable',
@@ -52,10 +47,13 @@ setup(
         'Operating System :: POSIX',
         'Operating System :: Microsoft :: Windows',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3 :: Only',
+        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',
         # uncomment if you test on these interpreters:
@@ -65,7 +63,8 @@ setup(
         'Topic :: Utilities',
     ],
     project_urls={
-        'Changelog': 'https://github.com/ionelmc/python-darkslide/blob/master/CHANGELOG.rst',
+        'Documentation': 'https://darkslide.readthedocs.io/',
+        'Changelog': 'https://darkslide.readthedocs.io/en/latest/changelog.html',
         'Issue Tracker': 'https://github.com/ionelmc/python-darkslide/issues',
     },
     keywords=[
@@ -77,7 +76,7 @@ setup(
         'textile',
         'landslide',
     ],
-    python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*',
+    python_requires='>=3.6',
     install_requires=[
         'Jinja2',
         'Markdown',

@@ -7,20 +7,21 @@ Overview
 .. list-table::
     :stub-columns: 1
 
+    * - docs
+      - |docs|
     * - tests
-      - | |travis| |appveyor| |requires|
+      - | |github-actions| |requires|
         | |coveralls| |codecov|
     * - package
       - | |version| |wheel| |supported-versions| |supported-implementations|
         | |commits-since|
+.. |docs| image:: https://readthedocs.org/projects/python-darkslide/badge/?style=flat
+    :target: https://python-darkslide.readthedocs.io/
+    :alt: Documentation Status
 
-.. |travis| image:: https://api.travis-ci.org/ionelmc/python-darkslide.svg?branch=master
-    :alt: Travis-CI Build Status
-    :target: https://travis-ci.org/ionelmc/python-darkslide
-
-.. |appveyor| image:: https://ci.appveyor.com/api/projects/status/github/ionelmc/python-darkslide?branch=master&svg=true
-    :alt: AppVeyor Build Status
-    :target: https://ci.appveyor.com/project/ionelmc/python-darkslide
+.. |github-actions| image:: https://github.com/ionelmc/python-darkslide/actions/workflows/github-actions.yml/badge.svg
+    :alt: GitHub Actions Build Status
+    :target: https://github.com/ionelmc/python-darkslide/actions
 
 .. |requires| image:: https://requires.io/github/ionelmc/python-darkslide/requirements.svg?branch=master
     :alt: Requirements Status
