@@ -33,8 +33,8 @@ def test_add_user_assets():
     g = Generator(base_dir, logger=logtest)
     g.user_css.extend(g.process_user_files(os.path.join(DATA_DIR, 'test.css')))
     g.user_js.extend(g.process_user_files(os.path.join(DATA_DIR, 'test.js')))
-    assert g.user_css[0]['contents'] == '* {color: red;}\n'
-    assert g.user_js[0]['contents'] == "alert('foo');\n"
+    assert g.user_css[0]['contents'].strip() == '* {color: red;}'
+    assert g.user_js[0]['contents'].strip() == "alert('foo');"
 
 
 def test_get_toc():
