@@ -95,6 +95,7 @@ class Generator(object):
             self.extensions = config.get('extensions', self.extensions)
             self.maxtoclevel = config.get('max-toc-level', self.maxtoclevel)
             self.theme = config.get('theme', self.theme)
+            self.theme_mod = config.get('theme_mod', self.theme_mod)
             self.destination_dir = os.path.dirname(self.destination_file)
             self.user_css = config.get('css', [])
             self.user_js = config.get('js', [])
