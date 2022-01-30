@@ -499,12 +499,4 @@ Styles Scope
    stylesheet bundled with the theme you are using
 -  For printing, modify the ``css/print.css``
 
-Authors
-=======
-
-The project was originally named Landslide and was authored by
-Adam Zapletal (adamzap@gmail.com) and Nicolas Perriault (nperriault@gmail.com)
-
-Slide code is based on html5-slides.
-
-More details: https://github.com/ionelmc/python-darkslide/contributors
+.. include:: ./AUTHORS.rst
